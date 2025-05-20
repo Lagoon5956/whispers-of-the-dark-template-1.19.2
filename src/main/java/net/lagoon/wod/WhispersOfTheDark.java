@@ -15,6 +15,6 @@ public class WhispersOfTheDark implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		LOGGER.info("Hello Fabric world!");
+
 	}
 }
