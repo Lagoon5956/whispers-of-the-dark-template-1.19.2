@@ -1,6 +1,8 @@
 package net.lagoon.wod.item.custom;
 
+import net.lagoon.wod.item.Moditems;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,7 +35,7 @@ public class TheVoiditem extends Item {
 
     @Override
     public int getItemBarColor(ItemStack stack) {
-        return 0x5500AA; // Optional: purple color
+        return 0x5500AA;
     }
 
     @Override
@@ -42,9 +44,9 @@ public class TheVoiditem extends Item {
             ServerWorld world = (ServerWorld) user.getWorld(); // cast for server-side particles
 
             if (isPassiveOverworldMob(entity)) {
-                entity.kill(); // Kill mob
+                entity.kill();
 
-                // Repair item slightly on success
+
                 if (stack.getDamage() > 0) {
                     stack.setDamage(stack.getDamage() - 1);
                 }
@@ -52,7 +54,7 @@ public class TheVoiditem extends Item {
                 user.getItemCooldownManager().set(stack.getItem(), 20); // cooldown
                 entity.playSound(SoundEvents.BLOCK_PORTAL_TRIGGER, 0.3F, 1.0F);
 
-                // Spawn black & purple particles at the entity's location
+
                 world.spawnParticles(ParticleTypes.PORTAL,
                         entity.getX(), entity.getY() + 1.0, entity.getZ(),
                         20, 0.5, 0.5, 0.5, 0.1);
@@ -69,12 +71,9 @@ public class TheVoiditem extends Item {
             if (stack.getDamage() >= stack.getMaxDamage()) {
                 //  Warning before explosion
                 user.sendMessage(Text.of("You have failed me..."), true); // false = no overlay, feels more serious
-
-                // Optional delay if you want dramatic timing (requires more work — ask if you want it!)
-                // Boom!
+                ItemStack dropStack = new ItemStack(Moditems.VOID_SHARDS);
+                ItemEntity droppedItem = new ItemEntity(world, user.getX(), user.getY(), user.getZ(), dropStack);
                 world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 5.0F, Explosion.DestructionType.BREAK);
-
-                // Spawn lots of particles at the explosion location
                 world.spawnParticles(ParticleTypes.PORTAL,
                         user.getX(), user.getY() + 1.0, user.getZ(),
                         50, 1.0, 1.0, 1.0, 0.2);
@@ -89,8 +88,6 @@ public class TheVoiditem extends Item {
 
         return ActionResult.SUCCESS;
     }
-
-
 
 
     private boolean isPassiveOverworldMob(Entity entity) {

@@ -19,6 +19,9 @@ public class Moditems {
     public static final Item THE_VOID = registerItem("the_void",
             new TheVoiditem(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).maxDamage(100)));
 
+    public static final Item VOID_SHARDS = registerItem("void_shard",
+            new Item(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1)));
+
 
 
 
