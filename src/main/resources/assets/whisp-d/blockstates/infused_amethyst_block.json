@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "whisp-d:block/infused_amethyst_block" }
+  }
+}

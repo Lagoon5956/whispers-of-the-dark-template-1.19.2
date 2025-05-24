@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:experience_bottle" },
+    { "item": "minecraft:experience_bottle" },
+    { "item": "minecraft:experience_bottle" },
+    { "item": "minecraft:experience_bottle" },
+    { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:amethyst_shard" }
+  ],
+  "result": {
+    "count": 4,
+    "item": "whisp-d:infused_amethyst"
+  }
+}
