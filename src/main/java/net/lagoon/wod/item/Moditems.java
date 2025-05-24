@@ -7,6 +7,7 @@ import net.lagoon.wod.item.custom.TheVoiditem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
 
@@ -14,13 +15,13 @@ public class Moditems {
 
 
     public static final Item INFUSED_AMETHYST = registerItem("infused_amethyst",
-            new Item(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK)));
+            new Item(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).rarity(Rarity.UNCOMMON)));
 
     public static final Item THE_VOID = registerItem("the_void",
-            new TheVoiditem(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).maxDamage(100)));
+            new TheVoiditem(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).maxDamage(100).rarity(Rarity.EPIC)));
 
-    public static final Item VOID_SHARDS = registerItem("void_shard",
-            new Item(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1)));
+    public static final Item VOID_SHARDS = registerItem("void_shards",
+            new Item(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).rarity(Rarity.EPIC)));
 
 
 

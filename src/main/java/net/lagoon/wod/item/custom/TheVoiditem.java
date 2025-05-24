@@ -2,7 +2,6 @@ package net.lagoon.wod.item.custom;
 
 import net.lagoon.wod.item.Moditems;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -41,19 +40,17 @@ public class TheVoiditem extends Item {
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         if (!user.getWorld().isClient()) {
-            ServerWorld world = (ServerWorld) user.getWorld(); // cast for server-side particles
+            ServerWorld world = (ServerWorld) user.getWorld();
 
             if (isPassiveOverworldMob(entity)) {
                 entity.kill();
-
 
                 if (stack.getDamage() > 0) {
                     stack.setDamage(stack.getDamage() - 1);
                 }
 
-                user.getItemCooldownManager().set(stack.getItem(), 20); // cooldown
+                user.getItemCooldownManager().set(stack.getItem(), 20);
                 entity.playSound(SoundEvents.BLOCK_PORTAL_TRIGGER, 0.3F, 1.0F);
-
 
                 world.spawnParticles(ParticleTypes.PORTAL,
                         entity.getX(), entity.getY() + 1.0, entity.getZ(),
@@ -64,16 +61,16 @@ public class TheVoiditem extends Item {
                         10, 0.3, 0.3, 0.3, 0.05);
 
             } else {
-                stack.damage(1, user, p -> p.sendToolBreakStatus(hand));
+                stack.damage(5, user, p -> p.sendToolBreakStatus(hand));
                 user.sendMessage(Text.of("Bring me the innocent!"), true);
             }
 
             if (stack.getDamage() >= stack.getMaxDamage()) {
-                //  Warning before explosion
+
                 user.sendMessage(Text.of("You have failed me..."), true); // false = no overlay, feels more serious
-                ItemStack dropStack = new ItemStack(Moditems.VOID_SHARDS);
-                ItemEntity droppedItem = new ItemEntity(world, user.getX(), user.getY(), user.getZ(), dropStack);
+
                 world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 5.0F, Explosion.DestructionType.BREAK);
+
                 world.spawnParticles(ParticleTypes.PORTAL,
                         user.getX(), user.getY() + 1.0, user.getZ(),
                         50, 1.0, 1.0, 1.0, 0.2);
@@ -82,12 +79,15 @@ public class TheVoiditem extends Item {
                         user.getX(), user.getY() + 1.0, user.getZ(),
                         30, 0.7, 0.7, 0.7, 0.1);
 
-                user.getStackInHand(hand).decrement(1);
+
+
+
             }
         }
 
         return ActionResult.SUCCESS;
     }
+
 
 
     private boolean isPassiveOverworldMob(Entity entity) {
@@ -106,6 +106,4 @@ public class TheVoiditem extends Item {
                 entity instanceof FoxEntity ||
                 entity instanceof ParrotEntity;
     }
-
-
 }
