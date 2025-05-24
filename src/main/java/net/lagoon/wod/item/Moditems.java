@@ -23,6 +23,9 @@ public class Moditems {
     public static final Item VOID_SHARDS = registerItem("void_shards",
             new Item(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).rarity(Rarity.EPIC)));
 
+    public static final Item INFUSED_STAR = registerItem("infused_star",
+            new Item(new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).rarity(Rarity.RARE)));
+
 
 
 
