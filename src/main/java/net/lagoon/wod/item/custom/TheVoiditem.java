@@ -61,31 +61,33 @@ public class TheVoiditem extends Item {
                         10, 0.3, 0.3, 0.3, 0.05);
 
             } else {
-                stack.damage(5, user, p -> p.sendToolBreakStatus(hand));
-                user.sendMessage(Text.of("Bring me the innocent!"), true);
-            }
-
-            if (stack.getDamage() >= stack.getMaxDamage()) {
-
-                user.sendMessage(Text.of("You have failed me..."), true); // false = no overlay, feels more serious
-
-                world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 5.0F, Explosion.DestructionType.BREAK);
-
-                world.spawnParticles(ParticleTypes.PORTAL,
-                        user.getX(), user.getY() + 1.0, user.getZ(),
-                        50, 1.0, 1.0, 1.0, 0.2);
-
-                world.spawnParticles(ParticleTypes.LARGE_SMOKE,
-                        user.getX(), user.getY() + 1.0, user.getZ(),
-                        30, 0.7, 0.7, 0.7, 0.1);
-
-
-
-
+                if (stack.getDamage() + 5 >= stack.getMaxDamage()) {
+                    user.sendToolBreakStatus(hand);
+                    user.setStackInHand(hand, new ItemStack(Moditems.VOID_SHARDS));
+                    Explode(user);
+                } else {
+                    stack.damage(5, user, p -> p.sendToolBreakStatus(hand));
+                }
+                user.sendMessage(Text.translatable("message.void_item.bringin"), true);
             }
         }
 
         return ActionResult.SUCCESS;
+    }
+    private static void Explode(PlayerEntity player) {
+        ServerWorld world = (ServerWorld) player.getWorld();
+        player.sendMessage(Text.translatable("message.void_item.failed"), true); // false = no overlay, feels more serious
+
+        world.createExplosion(player, player.getX(), player.getY(), player.getZ(), 5.0F, Explosion.DestructionType.BREAK);
+
+
+        world.spawnParticles(ParticleTypes.PORTAL,
+                player.getX(), player.getY() + 1.0, player.getZ(),
+                50, 1.0, 1.0, 1.0, 0.2);
+
+        world.spawnParticles(ParticleTypes.LARGE_SMOKE,
+                player.getX(), player.getY() + 1.0, player.getZ(),
+                30, 0.7, 0.7, 0.7, 0.1);
     }
 
 

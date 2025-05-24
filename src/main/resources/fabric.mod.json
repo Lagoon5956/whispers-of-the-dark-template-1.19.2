@@ -4,6 +4,7 @@
 	"version": "${version}",
 	"name": "whispers of the dark",
 	"description": "Custom mod for mc server",
+	"credits": "declan234e",
 	"authors": [
 		"Lagoon"
 	],
@@ -12,7 +13,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/whispers-of-the-dark/icon.png",
+	"icon": "assets/whisp-d/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -33,8 +34,5 @@
 		"minecraft": "~1.19.2",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }

@@ -5,6 +5,9 @@
 
   "block.whisp-d.infused_amethyst_block": "Infused Amethyst block",
 
-  "itemGroup.whisp-d.whisp-d": "Whispers of the Dark"
+  "itemGroup.whisp-d.whisp-d": "Whispers of the Dark",
+
+  "message.void_item.bringin": "Bring Me The Innocent!",
+  "message.void_item.failed": "You have failed me..."
 
 }
