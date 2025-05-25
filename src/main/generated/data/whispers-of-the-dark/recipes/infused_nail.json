@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "whisp-d:infused_amethyst"
+    },
+    "A": {
+      "item": "whisp-d:napping_tool"
+    }
+  },
+  "pattern": [
+    "  #",
+    " # ",
+    "#A "
+  ],
+  "result": {
+    "item": "whisp-d:infused_nail"
+  }
+}
