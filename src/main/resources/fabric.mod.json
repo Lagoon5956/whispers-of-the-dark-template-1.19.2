@@ -19,12 +19,13 @@
 		"main": [
 			"net.lagoon.wod.WhispersOfTheDark"
 		],
-		"fabric-datagen": [
-			"net.lagoon.wod.datagen.ModDataGeneration"
-		],
+
 
 		"client": [
 			"net.lagoon.wod.WhispersOfTheDarkclient"
+		],
+		"fabric-datagen": [
+			"net.lagoon.wod.datagen.ModDataGeneration"
 		]
 	},
 	"mixins": [
