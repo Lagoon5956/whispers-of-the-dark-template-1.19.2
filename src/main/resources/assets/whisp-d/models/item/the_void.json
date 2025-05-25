@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "whisp-d:item/the_void"
+    "layer0": "whisp-d:item/the_void",
+    "layer1": "whisp-d:item/the_void_ripple"
   }
 }

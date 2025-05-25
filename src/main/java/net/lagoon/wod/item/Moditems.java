@@ -2,7 +2,9 @@ package net.lagoon.wod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.lagoon.wod.WhispersOfTheDark;
+import net.lagoon.wod.item.custom.TheVoidBlade;
 import net.lagoon.wod.item.custom.TheVoiditem;
+import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.util.Identifier;
@@ -29,11 +31,19 @@ public class Moditems {
 
 
     public static final Item INFUSED_NAIL = (SwordItem) registerItem("infused_nail",
-            new SwordItem(Modtoolmeterialsimplements.INFUSED_AMETHYST, 3, 3,
-                    new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1)));
+            new SwordItem(Modtoolmeterialsimplements.INFUSED_AMETHYST, 2, -1,
+                    new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).rarity(Rarity.RARE)));
+
+    public static final Item VOID_BLADE = (SwordItem) registerItem("void_blade",
+            new TheVoidBlade(Modtoolmeterialsimplements.INFUSED_STAR, 6, -2.3f,
+                    new FabricItemSettings().group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).rarity(Rarity.EPIC)));
+
+    public static final Item NAPPING_TOOL = registerItem("napping_tool",
+            new Item(new FabricItemSettings()
+                    .group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).maxDamage(100)));
 
 
-   private static Item registerItem(String name, Item item) {
+    private static Item registerItem(String name, Item item) {
        return Registry.register(Registry.ITEM, new Identifier(WhispersOfTheDark.MOD_ID, name), item);
    }
 

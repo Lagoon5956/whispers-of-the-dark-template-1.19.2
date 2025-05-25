@@ -12,7 +12,9 @@ import java.util.function.Supplier;
 public enum Modtoolmeterialsimplements implements ToolMaterial {
 
     INFUSED_AMETHYST(MiningLevels.WOOD, 132, 0.5F, 2.5F, 22,
-            () -> Ingredient.ofItems(Moditems.INFUSED_AMETHYST));
+            () -> Ingredient.ofItems(Moditems.INFUSED_AMETHYST)),
+    INFUSED_STAR(MiningLevels.DIAMOND, 4000, 1,1.5F,15,
+            () -> Ingredient.ofItems(Moditems.INFUSED_STAR));
 
 
     private final int miningLevel;

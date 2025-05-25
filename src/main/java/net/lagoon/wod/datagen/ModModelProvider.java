@@ -20,5 +20,6 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(Moditems.INFUSED_NAIL, Models.HANDHELD);
+        itemModelGenerator.register(Moditems.NAPPING_TOOL, Models.HANDHELD);
     }
 }
