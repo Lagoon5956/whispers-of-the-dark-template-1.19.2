@@ -3,6 +3,9 @@ plugins {
 	id 'maven-publish'
 }
 
+
+
+
 version = project.mod_version
 group = project.maven_group
 
@@ -42,6 +45,29 @@ processResources {
 		expand "version": inputs.properties.version
 	}
 }
+
+def dataOutput = "src/main/generated"
+
+loom{
+	runs {
+		datgen{
+			server()
+
+			name "Data Generation"
+			vmArgs "-Dfabric-api.datagen"
+			vmArgs "-Dfabric-api.datagen.output-dir=${file(dataOutput)}"
+
+			runDir "build/datagen"
+
+		}
+	}
+}
+
+sourceSets {main{ resources {srcDirs += dataOutput } } }
+
+
+
+
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
