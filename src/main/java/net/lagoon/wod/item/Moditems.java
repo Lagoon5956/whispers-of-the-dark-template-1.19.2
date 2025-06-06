@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.lagoon.wod.WhispersOfTheDark;
 import net.lagoon.wod.item.custom.TheVoidBlade;
 import net.lagoon.wod.item.custom.TheVoiditem;
+import net.lagoon.wod.item.custom.VoidStaffitem;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.util.Identifier;
@@ -42,10 +44,19 @@ public class Moditems {
             new Item(new FabricItemSettings()
                     .group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).maxDamage(100)));
 
+    public static final Item STAR_DUST = registerItem("star_dust",
+            new Item(new FabricItemSettings()
+                    .group(ModItemGroup.WHISPERS_OF_THE_DARK).rarity(Rarity.UNCOMMON)));
+
+
+    public static final Item VOIDSTAFFITEM = registerItem("void_staff",
+            new VoidStaffitem(new FabricItemSettings()
+                    .group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).maxDamage(7000).rarity(Rarity.EPIC)));
 
     private static Item registerItem(String name, Item item) {
        return Registry.register(Registry.ITEM, new Identifier(WhispersOfTheDark.MOD_ID, name), item);
    }
+
 
 
 

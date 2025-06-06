@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "whisp-d:block/infused_amethyst_block"
-  }
-}

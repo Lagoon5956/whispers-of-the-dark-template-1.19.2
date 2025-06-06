@@ -6,6 +6,7 @@ import net.lagoon.wod.block.Modblocks;
 import net.lagoon.wod.item.Moditems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib3.GeckoLib;
 
 public class WhispersOfTheDark implements ModInitializer {
 	public static final String MOD_ID = "whisp-d";
@@ -18,5 +19,6 @@ public class WhispersOfTheDark implements ModInitializer {
 
 		Moditems.registerModItems();
 		Modblocks.registerModblocks();
+		GeckoLib.initialize();
 	}
 }

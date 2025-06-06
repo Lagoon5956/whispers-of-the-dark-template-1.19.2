@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "whisp-d:item/blade_texture",
-		"1": "whisp-d:item/hilt_texture",
-		"2": "whisp-d:item/handle_texture",
-		"3": "whisp-d:item/pumble_texture",
-		"particle": "whisp-d:item/blade_texture"
+		"0": "whisp-d:item/customtextures/blade_texture",
+		"1": "whisp-d:item/customtextures/hilt_texture",
+		"2": "whisp-d:item/customtextures/handle_texture",
+		"3": "whisp-d:item/customtextures/pumble_texture",
+		"particle": "whisp-d:item/customtextures/blade_texture"
 	},
 	"elements": [
 		{

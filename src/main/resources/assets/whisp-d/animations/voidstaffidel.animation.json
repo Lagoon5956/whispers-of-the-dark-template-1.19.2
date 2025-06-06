@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idel": {
+			"animation_length": 3.8333,
+			"bones": {
+				"group": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"3.8333": {
+							"vector": [-845.36244, 26.22997, -707.82134]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
