@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "whisp-d:item/star_dust",
+    "layer1": "whisp-d:item/animatedtextures/star_dust_layer1"
+  }
+}
