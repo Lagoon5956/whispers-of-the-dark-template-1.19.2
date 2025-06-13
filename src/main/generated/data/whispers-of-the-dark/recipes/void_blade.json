@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "whisp-d:infused_star"
+    },
+    "A": {
+      "item": "whisp-d:cosmic_handle"
+    }
+  },
+  "pattern": [
+    " # ",
+    " # ",
+    " A "
+  ],
+  "result": {
+    "item": "whisp-d:void_blade"
+  }
+}

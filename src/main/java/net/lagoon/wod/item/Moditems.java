@@ -48,6 +48,10 @@ public class Moditems {
             new Item(new FabricItemSettings()
                     .group(ModItemGroup.WHISPERS_OF_THE_DARK).rarity(Rarity.UNCOMMON)));
 
+    public static final Item COSMIC_HANDLE = registerItem("cosmic_handle",
+            new Item(new FabricItemSettings()
+                    .group(ModItemGroup.WHISPERS_OF_THE_DARK).maxCount(1).rarity(Rarity.UNCOMMON)));
+
 
     public static final Item VOIDSTAFFITEM = registerItem("void_staff",
             new VoidStaffitem(new FabricItemSettings()

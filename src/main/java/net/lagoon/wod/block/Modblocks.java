@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.lagoon.wod.WhispersOfTheDark;
 import net.lagoon.wod.block.custom.pedistal_block;
 import net.lagoon.wod.item.ModItemGroup;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
@@ -21,7 +22,12 @@ public class Modblocks {
 
     public static final Block PEDISTAL_BLOCK = registerBlock("pedistal_block",
             new pedistal_block(FabricBlockSettings.of(Material.STONE)
-                    .strength(3f).requiresTool().luminance(state -> 3).nonOpaque().sounds(BlockSoundGroup.STONE)), ModItemGroup.WHISPERS_OF_THE_DARK);
+                    .strength(3f).requiresTool().luminance(state -> 3).nonOpaque()
+                    .sounds(BlockSoundGroup.STONE)), ModItemGroup.WHISPERS_OF_THE_DARK);
+
+    public static final Block DISCO_BLOCK = registerBlock("disco_block",
+            new Block(FabricBlockSettings.of(Material.GLASS).strength(1f).requiresTool()
+                    .luminance(state -> 5).sounds(BlockSoundGroup.GLASS)), ModItemGroup.WHISPERS_OF_THE_DARK);
 
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {

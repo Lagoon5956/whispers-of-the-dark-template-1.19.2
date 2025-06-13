@@ -21,6 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
 
 
 
+
     }
 
     @Override
@@ -32,7 +33,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(Moditems.THE_VOID, Models.GENERATED);
         itemModelGenerator.register(Moditems.VOID_SHARDS, Models.GENERATED);
         itemModelGenerator.register(Moditems.STAR_DUST, Models.GENERATED);
-
+        itemModelGenerator.register(Moditems.COSMIC_HANDLE, Models.GENERATED);
     }
 
 }

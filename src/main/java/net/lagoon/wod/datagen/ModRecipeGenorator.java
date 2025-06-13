@@ -38,9 +38,23 @@ public class ModRecipeGenorator extends FabricRecipeProvider {
                         RecipeProvider.conditionsFromItem(Moditems.NAPPING_TOOL))
                 .criterion(RecipeProvider.hasItem(Moditems.INFUSED_AMETHYST),
                         RecipeProvider.conditionsFromItem(Moditems.INFUSED_AMETHYST))
+
                 .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Moditems.INFUSED_NAIL)));
 
+        ShapedRecipeJsonBuilder.create(Moditems.VOID_BLADE, 1)
+                .pattern(" # ")
+                .pattern(" # ")
+                .pattern(" A ")
+                .input('#', Moditems.INFUSED_STAR)
+                .input('A', Moditems.COSMIC_HANDLE)
+                .criterion(RecipeProvider.hasItem(Moditems.INFUSED_STAR),
+                        RecipeProvider.conditionsFromItem(Moditems.INFUSED_STAR))
+                .criterion(RecipeProvider.hasItem(Moditems.COSMIC_HANDLE),
+                        RecipeProvider.conditionsFromItem(Moditems.COSMIC_HANDLE))
+                .offerTo(exporter, new Identifier(RecipeProvider.getRecipeName(Moditems.VOID_BLADE)));
     }
+
+
 
     private static void offerShapelessRecipe() {
 

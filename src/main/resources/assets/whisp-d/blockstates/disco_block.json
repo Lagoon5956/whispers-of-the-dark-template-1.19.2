@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "whisp-d:block/disco_block"
+    }
+  }
+}

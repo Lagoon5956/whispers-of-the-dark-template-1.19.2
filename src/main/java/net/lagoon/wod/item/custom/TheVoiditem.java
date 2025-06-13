@@ -78,7 +78,7 @@ public class TheVoiditem extends Item {
         ServerWorld world = (ServerWorld) player.getWorld();
         player.sendMessage(Text.translatable("message.void_item.failed"), true); // false = no overlay, feels more serious
 
-        world.createExplosion(player, player.getX(), player.getY(), player.getZ(), 5.0F, Explosion.DestructionType.DESTROY);
+        world.createExplosion(player, player.getX(), player.getY(), player.getZ(), 10.0F, Explosion.DestructionType.DESTROY);
 
 
         world.spawnParticles(ParticleTypes.PORTAL,

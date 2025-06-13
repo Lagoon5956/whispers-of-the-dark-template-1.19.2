@@ -17,9 +17,6 @@ public class TheVoidBlade extends SwordItem {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
-    public boolean hasGlint(ItemStack stack) {
-        return true;
-    }
 
 
     @Override
